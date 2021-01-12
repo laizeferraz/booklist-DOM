@@ -38,7 +38,7 @@ class BookManager {
     list.innerHTML = `<li id=${newBook.id} class="list-group-item mt-2">
                       <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
                         <h5>${newBook.title}</h5>
-                        <button type="button" class="btn delete-icon"></button>
+                        <button onclick='deleteBook(this, ${newBook.id})' type="button" class="btn delete-icon"></button>
                       </div>
                       <div class="d-flex w-100 mb-3 justify-content-between">
                         <small>Author: ${newBook.author}</small>
@@ -64,21 +64,10 @@ class BookManager {
     const booksJson = JSON.stringify(this.books);
     localStorage.setItem('books', booksJson)
   }
-  // delete(bookId) {
-  //   const newBook = [];
-  //   for(let i = 0; 1 < this.books.length; i++){
-  //     const book = this.books[i];
-  //     if(book.id !== bookId) {
-  //       newBook.push(book);
-  //     }
-  //   }
-  //   this.books = newBook;
-  // }
 
   load() {
    
       const booksString = localStorage.getItem('books');
-      // this.books = JSON.parse(booksJson);
       const booksJson = JSON.parse(booksString);
       
       booksJson.map(eachBook => {
