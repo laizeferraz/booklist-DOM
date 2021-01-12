@@ -38,7 +38,7 @@ class BookManager {
     list.innerHTML = `<li id=${newBook.id} class="list-group-item mt-2">
                       <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
                         <h5>${newBook.title}</h5>
-                        <button onclick='deleteBook(this, ${newBook.id})' type="button" class="btn delete-icon"></button>
+                        <button type="button" class="btn delete-icon"></button>
                       </div>
                       <div class="d-flex w-100 mb-3 justify-content-between">
                         <small>Author: ${newBook.author}</small>
